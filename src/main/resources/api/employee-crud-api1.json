@@ -1,1 +1,175 @@
-{"openapi":"3.0.1","info":{"title":"OpenAPI definition","version":"v0"},"servers":[{"url":"http://localhost:8080","description":"Generated server url"}],"paths":{"/api/employee/{id}":{"get":{"tags":["employee-controller"],"operationId":"getProductById","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int32"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}},"put":{"tags":["employee-controller"],"operationId":"updateProd","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int32"}}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Employee"}}}},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}},"delete":{"tags":["employee-controller"],"operationId":"deleteById","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int32"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}}},"/api/employee":{"post":{"tags":["employee-controller"],"operationId":"save","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Employee"}}}},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}}}},"components":{"schemas":{"Employee":{"type":"object","properties":{"name":{"type":"string"},"emailId":{"type":"string"},"age":{"type":"string"},"gender":{"type":"string"},"dob":{"type":"string"},"worklocation":{"type":"string"},"designation":{"type":"string"}}}}}}
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "employee-crud-api1",
+    "version" : "1.0.0",
+    "description" : "API to manage  employee details ",
+    "contact" : {
+      "email" : "developer@nousinfo.com",
+      "name" : "Developer"
+    }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/WEBINAR/employee-crud-api1/1.0.0"
+  }, {
+    "url" : "http://localhost:8080",
+    "description" : "Generated server url"
+  } ],
+  "paths" : {
+    "/api/employee/{id}" : {
+      "get" : {
+        "description" : "Get employee by id",
+        "tags" : [ "EMPLOYEE OPERATIONS" ],
+        "operationId" : "getProductById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Employee"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "EMPLOYEE OPERATIONS" ],
+        "description" : "update employee by id",
+        "operationId" : "updateProd",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Employee"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "EMPLOYEE OPERATIONS" ],
+        "description" : "Delete employee by id",
+        "operationId" : "deleteById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employee" : {
+      "post" : {
+        "tags" : [ "EMPLOYEE OPERATIONS" ],
+        "description" : "post employee data",
+        "operationId" : "save",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Employee"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Employee" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "example" : "Joe"
+          },
+          "emailId" : {
+            "type" : "string",
+            "example" : "joe@gmail.com"
+          },
+          "age" : {
+            "type" : "string",
+            "example" : "22"
+          },
+          "gender" : {
+            "type" : "string",
+            "example" : "M"
+          },
+          "dob" : {
+            "type" : "string",
+            "example" : "22-11-1991"
+          },
+          "worklocation" : {
+            "type" : "string",
+            "example" : "NY"
+          },
+          "designation" : {
+            "type" : "string",
+            "example" : "TL"
+          }
+        }
+      }
+    }
+  }
+}
