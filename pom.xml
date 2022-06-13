@@ -14,7 +14,7 @@
 	<groupId>com.spring.project</groupId>
 	<artifactId>employee-crud-api1</artifactId>
 	<version>1.0.0</version>
-	<name>employee-crud-api</name>
+	<name>employee-crud-api1</name>
 	<description>API to perform employee crud operations</description>
 	<properties>
 		<java.version>8</java.version>
