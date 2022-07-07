@@ -67,3 +67,16 @@ jobs:
         version: v2
         # The Python interpreter to use for AWS SAM CLI
         python: 3.0
+  build-deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+        - uses: aws-actions/setup-sam@v1
+        - uses: aws-actions/configure-aws-credentials@v1
+          with:
+            aws-access-key-id: AKIA6OZ577OXFUZJ3UXI
+            aws-secret-access-key: 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
+            aws-region: us-east
+        # sam build 
+        - run: aws apigatewayv2 import-api \    --body file://api-definition.yaml
